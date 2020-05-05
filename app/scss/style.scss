@@ -49,6 +49,8 @@
 	font-weight: 800;
 	margin-bottom: 20px;
 
+
+
 }
 .slider-arrows {
 	position: absolute;
@@ -106,6 +108,13 @@
 	height: 100vh;
 	text-align: center;
 	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.header__logo {
+	width: 120px;
 }
 
 .header__title {
@@ -123,38 +132,35 @@
 }
 
 .menu {
-	padding-top: 10px;
+	padding-top: 7px;
 	a {
 		color: #fff;
 		span {
 			display: block;
 			font-weight: 500;
 			font-size: 12px;
-			line-height: 14px;
+			line-height: 7px;
 			letter-spacing: 3px;
-			padding-top: 6px;
-			margin-bottom: 10px;
+			padding-top: 5px;
+			margin-bottom: 23px;
 		}	
 	}
 }
 
 .header__date {
 	font-weight: 800;
-	font-size: 72px;
-	line-height: 64px;
+	font-size: 34px;
+	line-height: 47px;
 	
 	span {
-		padding-top: 15px;
 		display: block;
 		font-weight: 300;
-		font-size: 16px;
-		line-height: 19px;
+		font-size: 11px;
+		line-height: 10px;
 		letter-spacing: 1.4px;
-		margin-bottom: 30px;
+		margin-bottom: 11px;
 	}
 }
-
-.header__search
 
 .header__location {
 	display: inline-block;
@@ -167,14 +173,37 @@
 	&::before {
 		content:"";
 		position: absolute;
-    width: 11px;
-    height: 13px;
-    background-image: url(../images/marker.svg);
-    left: 0;
-    top: 0;
+		width: 11px;
+		height: 13px;
+		background-image: url(../images/marker.svg);
+		left: 0;
+		top: 0;
 	}
 }
+.header__map {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 3;
+}
 
+.header__arrows {
+	position: absolute;
+	bottom: 30px;
+	left: 167px;
+	z-index: 3;
+}
+
+.line-animation {
+	stroke-dashoffset: 600;
+	stroke-dasharray: 600;
+	animation: animdash 3s infinite 6s;
+}
+@keyframes animdash {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
 
 
 
