@@ -204,7 +204,6 @@
 }
 
 .serf {
-	padding: 160px 0 120px;
 	background-image: url(/images/serf-bg.png);
 	background-position: right 200px;
 	background-repeat: no-repeat;
@@ -392,8 +391,8 @@
 		position: absolute;
 		width: 0;
 		height: 0;
-		border-bottom: 20px solid $green;
-		border-left: 12px solid transparent;
+		border-bottom: 21px solid $green;
+		border-left: 11px solid transparent;
 		border-right: 12px solid transparent;
 		bottom: -21px;
 		left: 50%;
@@ -470,6 +469,22 @@
 			left: auto;
 			right: 0;
 		}
+	}
+}
+.travel {
+	background-image: url(../images/travel-bg.png);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+.travel-slider {
+	&__head {
+		background-repeat: no-repeat;
+		background-position: top left;
+		min-height: 780px;
+	}
+	&__descr {
+		
 	}
 }
 
