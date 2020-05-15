@@ -1,11 +1,11 @@
 let gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    browserSync = require('browser-sync'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
-    del = require('del'),
-    autoprefixer = require('gulp-autoprefixer');
+sass = require('gulp-sass'),
+browserSync = require('browser-sync'),
+uglify = require('gulp-uglify'),
+concat = require('gulp-concat'),
+rename = require('gulp-rename'),
+del = require('del'),
+autoprefixer = require('gulp-autoprefixer');
 
 
 gulp.task('clean', async function(){
@@ -14,13 +14,13 @@ gulp.task('clean', async function(){
 
 gulp.task('scss', function(){
   return gulp.src('app/scss/**/*.scss')
-    .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(autoprefixer({
-      overrideBrowserslist: ['last 8 versions']
-    }))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('app/css'))
-    .pipe(browserSync.reload({stream: true}))
+  .pipe(sass({outputStyle: 'compressed'}))
+  .pipe(autoprefixer({
+    overrideBrowserslist: ['last 8 versions']
+  }))
+  .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest('app/css'))
+  .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('css', function(){
@@ -29,10 +29,10 @@ gulp.task('css', function(){
     'node_modules/slick-carousel/slick/slick.css',
     'node_modules/animate.css/animate.css',
     
-  ])
-    .pipe(concat('_libs.scss'))
-    .pipe(gulp.dest('app/scss'))
-    .pipe(browserSync.reload({stream: true}))
+    ])
+  .pipe(concat('_libs.scss'))
+  .pipe(gulp.dest('app/scss'))
+  .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('html', function(){
@@ -48,36 +48,36 @@ gulp.task('script', function(){
 gulp.task('js', function(){
   return gulp.src([
     'node_modules/slick-carousel/slick/slick.js'
-  ])
-    .pipe(concat('libs.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('app/js'))
-    .pipe(browserSync.reload({stream: true}))
+    ])
+  .pipe(concat('libs.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('app/js'))
+  .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('browser-sync', function() {
   browserSync.init({
-      server: {
-          baseDir: "app/"
-      }
+    server: {
+      baseDir: "app/"
+    }
   });
 });
 
 gulp.task('export', function(){
   let buildHtml = gulp.src('app/**/*.html')
-    .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist'));
 
   let BuildCss = gulp.src('app/css/**/*.css')
-    .pipe(gulp.dest('dist/css'));
+  .pipe(gulp.dest('dist/css'));
 
   let BuildJs = gulp.src('app/js/**/*.js')
-    .pipe(gulp.dest('dist/js'));
-    
+  .pipe(gulp.dest('dist/js'));
+  
   let BuildFonts = gulp.src('app/fonts/**/*.*')
-    .pipe(gulp.dest('dist/fonts'));
+  .pipe(gulp.dest('dist/fonts'));
 
   let BuildImg = gulp.src('app/img/**/*.*')
-    .pipe(gulp.dest('dist/img'));   
+  .pipe(gulp.dest('dist/img'));   
 });
 
 gulp.task('watch', function(){
