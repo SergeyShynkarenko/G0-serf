@@ -16,6 +16,8 @@ body {
 	background-color: #171919;
 	color: #fff;
 	text-transform: uppercase;
+	min-width: 320px;
+	overflow-x: hidden;
 }
 
 a {
@@ -168,7 +170,7 @@ li{
 		}
 	}
 }
-.serf,
+.surf,
 .travel {
 	padding: 160px 0 120px;
 	}html {
@@ -251,7 +253,7 @@ li{
 	}
 
 	.title {
-		span {
+		div {
 			font-weight: 800;
 			font-size: 200px;
 			color: rgba(#fff, 0.02);
@@ -260,6 +262,10 @@ li{
 			display: inline-block;
 		}
 
+		span {
+			display: inline-block;
+		}
+		
 		h3 {
 			position: absolute;
 			top: 0;
@@ -341,7 +347,7 @@ li{
 			}
 		}
 	}
-	.serf,
+	.surf,
 	.holder {
 		padding: 160px 0 120px;
 	}
