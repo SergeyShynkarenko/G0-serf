@@ -1,5 +1,5 @@
 {
-  "name": "ggo-serf",
+  "name": "go-serf",
   "version": "1.0.0",
   "description": "go-serf",
   "main": "index.js",
